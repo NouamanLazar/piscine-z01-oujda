@@ -17,7 +17,7 @@ func IterativeFactorial(nb int) int {
 		return result
 	}
 }
-
+-----------------------------------------------------------------------------------------------------------------------
 // Exercise 2
 package main
 
@@ -43,7 +43,7 @@ func main() {
 	// Call RecursiveFactorial with nb=-8 and print the result
 	fmt.Println(RecursiveFactorial(arg))
 }
-
+------------------------------------------------------------------------------------------------------------------------
 // Exercise 3 - Question 4
 
 // IterativePower is an iterative function that returns the value of nb to the power of power.
@@ -65,7 +65,7 @@ func IterativePower(nb int, power int) int {
 	// Return the final result
 	return result
 }
-
+-------------------------------------------------------------------------------------------------------------------------
 // Exercise 4 - Question 4
 package main
 
@@ -91,3 +91,32 @@ func main() {
 	// Call IterativePower with nb=4 and power=3 and print the result
 	fmt.Println(IterativePower(4, 3)) // Output: 64
 }
+-----------------------------------------------------------------------------------------------------------------------------
+// Exercise 5 - Question 4package main
+
+import (
+	"fmt"
+)
+
+func Fibonacci(index int) int {
+	if index < 0 {
+		// A negative index will return -1
+		return -1
+	} else if index == 0 {
+		// The first value at index 0 is 0
+		return 0
+	} else if index == 1 {
+		// The second value at index 1 is 1
+		return 1
+	} else {
+		// Recursive case: Fibonacci value at index is the sum of values at (index-1) and (index-2)
+		return Fibonacci(index-1) + Fibonacci(index-2)
+	}
+}
+
+func main() {
+	arg1 := 4
+	// Print the Fibonacci value at index 4, which is 3
+	fmt.Println(Fibonacci(arg1))
+}
+
