@@ -12,3 +12,41 @@ func IterativeFactorial(nb int) int {
 		return result
 	}
 }
+// exersice two 
+package main
+
+import "fmt"
+
+func RecursiveFactorial(nb int) int {
+	if nb == 0 {
+		return 1
+	} else if nb < 0 || nb > 64 {
+		return 0
+	} else {
+		return nb * RecursiveFactorial(nb-1)
+	}
+}
+
+func main() {
+	arg := -8
+	fmt.Println(RecursiveFactorial(arg))
+}
+// execise 2 
+package main
+
+import "fmt"
+
+func RecursiveFactorial(nb int) int {
+	if nb == 0 {
+		return 1
+	} else if nb < 0 || nb > 64 {
+		return 0
+	} else {
+		return nb * RecursiveFactorial(nb-1)
+	}
+}
+
+func main() {
+	arg := -8
+	fmt.Println(RecursiveFactorial(arg))
+}
