@@ -92,7 +92,8 @@ func main() {
 	fmt.Println(IterativePower(4, 3)) // Output: 64
 }
 -----------------------------------------------------------------------------------------------------------------------------
-// Exercise 5 - Question 4package main
+// Exercise 5 - Question 4
+package main
 
 import (
 	"fmt"
