@@ -50,3 +50,25 @@ func main() {
 	arg := -8
 	fmt.Println(RecursiveFactorial(arg))
 }
+execrsice 3 quest 4
+
+// IterativePower is an iterative function that returns the value of nb to the power of power.
+// Negative powers will return 0. Overflows do not have to be dealt with.
+func IterativePower(nb int, power int) int {
+	// Check for negative power
+	if power < 0 {
+		return 0
+	}
+
+	// Initialize the result variable to 1
+	result := 1
+
+	// Iterate from 1 to power and multiply nb by itself
+	for i := 1; i <= power; i++ {
+		result *= nb
+	}
+
+	// Return the final result
+	return result
+}
+
