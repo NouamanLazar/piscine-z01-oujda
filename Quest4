@@ -153,3 +153,37 @@ func main() {
 	fmt.Println(Sqrt(4)) // Output: 2
 	fmt.Println(Sqrt(3)) // Output: 3
 }
+-------------------------------------------------------------------------------------------------------------------------------
+// Exercise 7 - Question 4
+package main
+
+import (
+	"fmt"
+)
+
+// IsPrime checks if a given positive integer is a prime number.
+func IsPrime(nb int) bool {
+	// Check if nb is less than or equal to 1 (not a prime number)
+	if nb <= 1 {
+		return false
+	}
+
+	// Loop to check for factors up to the square root of nb
+	for i := 2; i*i <= nb; i++ {
+		// If nb is divisible by i, it's not a prime number
+		if nb%i == 0 {
+			return false
+		}
+	}
+
+	// If no factors found, nb is a prime number
+	return true
+}
+
+func main() {
+	// Test the IsPrime function with example values
+	fmt.Println(IsPrime(5)) // Should print: true
+	fmt.Println(IsPrime(4)) // Should print: false
+}
+-------------------------------------------------------------------------------------------------------------------------------
+// Exercise 8 - Question 4
