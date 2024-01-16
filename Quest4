@@ -193,21 +193,6 @@ import (
 	"fmt"
 )
 
-// IsPrime checks if a given positive integer is a prime number.
-func IsPrime(nb int) bool {
-	if nb <= 1 {
-		return false
-	}
-
-	for i := 2; i*i <= nb; i++ {
-		if nb%i == 0 {
-			return false
-		}
-	}
-
-	return true
-}
-
 // FindNextPrime returns the first prime number that is equal or superior to the given parameter.
 func FindNextPrime(nb int) int {
 	// If nb is less than or equal to 1, return the smallest prime number 2
