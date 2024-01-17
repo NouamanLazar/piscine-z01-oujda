@@ -289,4 +289,30 @@ func IsNumeric(s string) bool {
 	}
 	return true
 }
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 12 Quest 5
+package main
+
+import "fmt"
+
+// IsPrintable checks if all characters in the string are printable ASCII characters.
+func IsPrintable(s string) bool {
+	// Iterate through each character in the string
+	for _, char := range s {
+		// Check if the character is not a printable ASCII character
+		if char < 32 || char > 126 {
+			return false
+		}
+	}
+	// If all characters are printable, return true
+	return true
+}
+
+func main() {
+	// Example of a printable string
+	fmt.Println(IsPrintable("Hello"))      // true
+
+	// Example of a non-printable string (contains a newline character)
+	fmt.Println(IsPrintable("Hello\n"))    // false
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
