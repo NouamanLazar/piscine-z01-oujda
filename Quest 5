@@ -117,3 +117,32 @@ func main() {
 	// Compare "Ola!" and "Ol", should return 1
 	fmt.Println(Compare("Ola!", "Ol"))
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ex 5 Quest 
+package main
+
+import (
+	"fmt"
+)
+
+// AlphaCount function counts the number of alphabetical characters in a string.
+func AlphaCount(s string) int {
+	count := 0
+
+	// Iterate through each character in the string
+	for _, char := range s {
+		// Check if the character is an alphabetical letter using fmt
+		if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') {
+			count++
+		}
+	}
+
+	return count
+}
+
+func main() {
+	s := "Hello 78 World!    4455 /"
+	nb := AlphaCount(s)
+	fmt.Println(nb)
+}
+
