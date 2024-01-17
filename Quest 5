@@ -176,3 +176,46 @@ func main() {
 	fmt.Println(Index("Ola!", "hOl"))
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 7 Quest 5
+package main
+
+import (
+	"fmt"
+)
+
+func Concat(str1 string, str2 string) string {
+	return str1 + str2
+}
+
+func main() {
+	// Use the Concat function to concatenate the strings
+	fmt.Println(Concat("Hello!", " How are you?"))
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 8 Quest 5
+package main
+
+import (
+	"fmt"
+)
+
+// IsUpper function checks if the string contains only uppercase characters.
+func IsUpper(s string) bool {
+	// Iterate through each character in the string
+	for _, char := range s {
+		// Check if the character is not an uppercase letter
+		if char < 'A' || char > 'Z' {
+			return false
+		}
+	}
+	// If all characters are uppercase, return true
+	return true
+}
+
+func main() {
+	// Check if the string "HELLO" contains only uppercase characters, should return true
+	fmt.Println(IsUpper("HELLO"))
+	// Check if the string "HELLO!" contains only uppercase characters, should return false
+	fmt.Println(IsUpper("HELLO!"))
+}
+
