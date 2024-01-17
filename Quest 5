@@ -239,7 +239,8 @@ func IsLower(s string) bool {
 		if char < 'a' || char > 'z' {
 			return false
 		}
-	}
+	}// ToUpper function takes a string and returns its uppercase equivalent.
+
 	return true
 }
 
@@ -316,6 +317,7 @@ func main() {
 	fmt.Println(IsPrintable("Hello\n"))    // false
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 13 Quest 5"
 package main
 
 import "fmt"
@@ -337,3 +339,5 @@ func main() {
     // Call ToUpper function with a sample string and print the result.
     fmt.Println(ToUpper("Hello! How are you?"))
 } 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
