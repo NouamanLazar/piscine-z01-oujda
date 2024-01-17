@@ -1,1 +1,79 @@
+Ex 1 Quest 5
+package main
 
+import (
+	"github.com/01-edu/z01"
+)
+
+// FirstRune function takes a string as input and returns the first rune of the string.
+func FirstRune(s string) rune {
+	return []rune(s)[0]
+}
+
+func main() {
+	// Print the first rune of "Hello!"
+	z01.PrintRune(FirstRune("Hello!"))
+	// Print the first rune of "Salut!"
+	z01.PrintRune(FirstRune("Salut!"))
+	// Print the first rune of "Ola!"
+	z01.PrintRune(FirstRune("Ola!"))
+	// Print a newline character
+	z01.PrintRune('\n')
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 2 Quest 6
+package main
+
+import (
+	"github.com/01-edu/z01"
+)
+
+// LastRune function takes a string as input and returns the last rune of the string.
+func LastRune(s string) rune {
+	// Convert the string to a slice of runes
+	runes := []rune(s)
+	// Return the last rune in the slice
+	return runes[len(runes)-1]
+}
+
+func main() {
+	// Print the last rune of "Hello!"
+	z01.PrintRune(LastRune("Hello!"))
+	// Print the last rune of "Salut!"
+	z01.PrintRune(LastRune("Salut!"))
+	// Print the last rune of "Ola!"
+	z01.PrintRune(LastRune("Ola!"))
+	// Print a newline character
+	z01.PrintRune('\n')
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ex 3 Quest 6
+package main
+
+import "github.com/01-edu/z01"
+
+// NRune function takes a string and an index n, and returns the rune at that index.
+func NRune(s string, n int) rune {
+	// Check if n is within the valid range
+	if n > 0 && n <= len(s) {
+		// Convert the string to a slice of runes and return the rune at index n-1
+		return []rune(s)[n-1]
+	}
+	// If n is out of range, return 0 (zero value for rune)
+	return 0
+}
+
+func main() {
+	// Print the rune at index 3 in "Hello!"
+	z01.PrintRune(NRune("Hello!", 3))
+	// Print the rune at index 2 in "Salut!"
+	z01.PrintRune(NRune("Salut!", 2))
+	// Print the rune at index -1 in "Bye!" (out of range)
+	z01.PrintRune(NRune("Bye!", -1))
+	// Print the rune at index 5 in "Bye!" (out of range)
+	z01.PrintRune(NRune("Bye!", 5))
+	// Print the rune at index 4 in "Ola!"
+	z01.PrintRune(NRune("Ola!", 4))
+	// Print a newline character
+	z01.PrintRune('\n')
+}
