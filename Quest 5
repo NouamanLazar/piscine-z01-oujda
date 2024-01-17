@@ -315,4 +315,25 @@ func main() {
 	// Example of a non-printable string (contains a newline character)
 	fmt.Println(IsPrintable("Hello\n"))    // false
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package main
+
+import "fmt"
+
+// ToUpper function takes a string and returns its uppercase equivalent.
+func ToUpper(s string) string {
+    result := ""
+    for _, char := range s {
+        if char >= 'a' && char <= 'z' {
+            // Convert lowercase letter to uppercase
+            char -= 'a' - 'A'
+        }
+        result += string(char)
+    }
+    return result
+}
+
+func main() {
+    // Call ToUpper function with a sample string and print the result.
+    fmt.Println(ToUpper("Hello! How are you?"))
+} 
