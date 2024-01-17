@@ -146,3 +146,33 @@ func main() {
 	fmt.Println(nb)
 }
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ex 6 Quest 5
+package main
+
+import "fmt"
+
+// Index function finds the index of the first occurrence of the substring toFind in the string s.
+// It returns -1 if the substring is not found.
+func Index(s string, toFind string) int {
+	// Iterate through each character in the string s
+	for i := 0; i <= len(s)-len(toFind); i++ {
+		// Check if the substring starting from the current position matches toFind
+		if s[i:i+len(toFind)] == toFind {
+			// Return the index if found
+			return i
+		}
+	}
+	// Return -1 if the substring is not found
+	return -1
+}
+
+func main() {
+	// Find the index of "l" in "Hello!", should return 2
+	fmt.Println(Index("Hello!", "l"))
+	// Find the index of "alu" in "Salut!", should return 1
+	fmt.Println(Index("Salut!", "alu"))
+	// Find the index of "hOl" in "Ola!", should return -1 (not found)
+	fmt.Println(Index("Ola!", "hOl"))
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
