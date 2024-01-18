@@ -409,40 +409,78 @@ import (
 // It handles a single optional negative sign at the beginning.
 // If the string is not a valid representation of an integer, it returns 0.
 func TrimAtoi(s string) int {
-	var result int
-	var isNegative bool
+	i := 0
 
 	// Iterate through each character in the string
-	for _, char := range s {
-		// Check for a negative sign at the beginning
-		if char == '-' && result == 0 {
-			isNegative = true
-		} else if char >= '0' && char <= '9' {
+	for _, let := range s {
+		// Check if the character is a digit (0-9)
+		if let >= '0' && let <= '9' {
 			// Convert the character to an integer and update the result
-			digit := int(char - '0')
-			result = result*10 + digit
-		} else if result > 0 {
-			// Break the loop if a non-digit character is encountered after a valid number
-			break
+			switch let {
+			case '0':
+				i += 0
+			case '1':
+				i += 1
+			case '2':
+				i += 2
+			case '3':
+				i += 3
+			case '4':
+				i += 4
+			case '5':
+				i += 5
+			case '6':
+				i += 6
+			case '7':
+				i += 7
+			case '8':
+				i += 8
+			case '9':
+				i += 9
+			}
+
+			// Multiply the result by 10 for the next digit
+			i *= 10
 		}
 	}
 
-	// Apply the sign to the result if needed
-	if isNegative {
-		result = -result
+	// Calculate the final numeric result by dividing by 10
+	num := i / 10
+	mind := 100
+	lin := 0
+
+	// Iterate through each character in the string with index
+	for index, let := range s {
+		// Check for the position of the negative sign
+		if let == '-' {
+			mind = index
+		}
+
+		// Check for the position of the last digit
+		if let >= '1' && let <= '9' {
+			lin = index
+
+			// Return the appropriate result based on the positions of the negative sign and last digit
+			if index > mind {
+				return -num
+			} else if lin > 0 {
+				return num
+			}
+		}
 	}
 
-	return result
+	// Return the final numeric result
+	return num
 }
 
 func main() {
 	// Test cases
-	fmt.Println(TrimAtoi("12345"))          // 12345
-	fmt.Println(TrimAtoi("str123ing45"))    // 12345
-	fmt.Println(TrimAtoi("012 345"))        // 12345
-	fmt.Println(TrimAtoi("Hello World!"))   // 0
-	fmt.Println(TrimAtoi("sd+x1fa2W3s4"))   // 1234
-	fmt.Println(TrimAtoi("sd-x1fa2W3s4"))   // -1234
-	fmt.Println(TrimAtoi("sdx1-fa2W3s4"))   // 1234
-	fmt.Println(TrimAtoi("sdx1+fa2W3s4"))   // 1234
+	fmt.Println(TrimAtoi("12345"))
+	fmt.Println(TrimAtoi("str123ing45"))
+	fmt.Println(TrimAtoi("012 345"))
+	fmt.Println(TrimAtoi("Hello World!"))
+	fmt.Println(TrimAtoi("sd+x1fa2W3s4"))
+	fmt.Println(TrimAtoi("sd-x1fa2W3s4"))
+	fmt.Println(TrimAtoi("sdx1-fa2W3s4"))
+	fmt.Println(TrimAtoi("sdx1+fa2W3s4"))
 }
