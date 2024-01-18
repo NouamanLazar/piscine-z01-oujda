@@ -359,4 +359,45 @@ func main() {
 	fmt.Println(piscine.ToLower("Hello! How are you?"))
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ex 15 Quest 5
+package main
 
+import (
+	"github.com/01-edu/z01"
+)
+
+func PrintNbrInOrder(n int) {
+	if n == 0 {
+		z01.PrintRune('0')
+		return
+	}
+
+	// Create an array to store the count of each digit
+	count := [10]int{}
+
+	// Count the occurrences of each digit
+	for n > 0 {
+		count[n%10]++
+		n /= 10
+	}
+
+	// Print the digits in ascending order
+	for i := 1; i < 10; i++ {
+		for j := 0; j < count[i]; j++ {
+			z01.PrintRune(rune(i + '0'))
+		}
+	}
+
+	// Print the digit 0
+	for j := 0; j < count[0]; j++ {
+		z01.PrintRune('0')
+	}
+}
+
+func main() {
+	PrintNbrInOrder(123)
+	PrintNbrInOrder(0)
+	PrintNbrInOrder(321)
+	z01.PrintRune('\n') // Add a newline at the end
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
