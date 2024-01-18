@@ -381,16 +381,11 @@ func PrintNbrInOrder(n int) {
 		n /= 10
 	}
 
-	// Print the digits in ascending order
-	for i := 1; i < 10; i++ {
+	// Print the digits in ascending order with leading zeros
+	for i := 0; i < 10; i++ {
 		for j := 0; j < count[i]; j++ {
 			z01.PrintRune(rune(i + '0'))
 		}
-	}
-
-	// Print the digit 0
-	for j := 0; j < count[0]; j++ {
-		z01.PrintRune('0')
 	}
 }
 
@@ -400,4 +395,54 @@ func main() {
 	PrintNbrInOrder(321)
 	z01.PrintRune('\n') // Add a newline at the end
 }
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ex 16 Quest 5
+package main
+
+import (
+	"fmt"
+)
+
+// TrimAtoi parses an integer from a string, ignoring leading non-digit characters.
+// It handles a single optional negative sign at the beginning.
+// If the string is not a valid representation of an integer, it returns 0.
+func TrimAtoi(s string) int {
+	var result int
+	var isNegative bool
+
+	// Iterate through each character in the string
+	for _, char := range s {
+		// Check for a negative sign at the beginning
+		if char == '-' && result == 0 {
+			isNegative = true
+		} else if char >= '0' && char <= '9' {
+			// Convert the character to an integer and update the result
+			digit := int(char - '0')
+			result = result*10 + digit
+		} else if result > 0 {
+			// Break the loop if a non-digit character is encountered after a valid number
+			break
+		}
+	}
+
+	// Apply the sign to the result if needed
+	if isNegative {
+		result = -result
+	}
+
+	return result
+}
+
+func main() {
+	// Test cases
+	fmt.Println(TrimAtoi("12345"))          // 12345
+	fmt.Println(TrimAtoi("str123ing45"))    // 12345
+	fmt.Println(TrimAtoi("012 345"))        // 12345
+	fmt.Println(TrimAtoi("Hello World!"))   // 0
+	fmt.Println(TrimAtoi("sd+x1fa2W3s4"))   // 1234
+	fmt.Println(TrimAtoi("sd-x1fa2W3s4"))   // -1234
+	fmt.Println(TrimAtoi("sdx1-fa2W3s4"))   // 1234
+	fmt.Println(TrimAtoi("sdx1+fa2W3s4"))   // 1234
+}
