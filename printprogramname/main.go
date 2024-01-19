@@ -4,7 +4,6 @@ import (
 	"os"
 	"github.com/01-edu/z01"
 )
-
 func main() {
 	// Get the command-line arguments (including the program name)
 	result := os.Args
