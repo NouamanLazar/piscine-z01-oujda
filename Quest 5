@@ -484,3 +484,30 @@ func main() {
 	fmt.Println(TrimAtoi("sdx1-fa2W3s4"))
 	fmt.Println(TrimAtoi("sdx1+fa2W3s4"))
 }
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ex 17 Quest 5 
+package main
+
+import (
+	"fmt"
+)
+
+// BasicJoin concatenates the elements of a string slice into a single string.
+func BasicJoin(strs []string) string {
+	var result string
+
+	// Iterate through each element in the string slice
+	for _, str := range strs {
+		// Concatenate the current element to the result string
+		result += str
+	}
+
+	// Return the concatenated string
+	return result
+}
+
+func main() {
+	// Example usage of BasicJoin function
+	elems := []string{"Hello!", " How", " are", " you?"}
+	fmt.Println(BasicJoin(elems))
+}
